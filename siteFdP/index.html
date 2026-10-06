@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feira de Profissões</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const cabecalho = document.querySelector("header");
+
+    if (!cabecalho) {
+        return;
+    }
+
+    function atualizarCabecalho() {
+        if (window.scrollY > 50) {
+            cabecalho.classList.add("reduzido");
+        } else {
+            cabecalho.classList.remove("reduzido");
+        }
+    }
+
+    window.addEventListener("scroll", atualizarCabecalho);
+    atualizarCabecalho();
+});
+</script>
+
+
+
+<body>
+
+    <header>
+        <h1>Guitar Hero Eletrônico</h1>
+        <p>Membros: Enzo Bordotti, Gabriel Ygor, Gabriel da Silva, Daniel Alves e Danilo Fortunato</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>A eletrônica e a música</h2>
+            <p>
+                A relação entre a eletrônica e a música começou a se desenvolver principalmente no século XX, quando novas tecnologias passaram a permitir a criação, amplificação e modificação de sons.
+<br><br>
+Um dos primeiros grandes exemplos foi o surgimento de instrumentos eletrônicos, como o Theremin, criado em 1920 pelo inventor russo Léon Theremin. O instrumento utilizava circuitos eletrônicos para produzir sons e podia ser controlado sem contato físico.
+<br><br>
+Com o passar das décadas, a eletrônica passou a fazer parte de praticamente todos os estilos musicais. Amplificadores, pedais de efeitos, sintetizadores, baterias eletrônicas, mesas de som e computadores transformaram a maneira como a música podia ser produzida e apresentada.
+<br><br>
+Hoje, microcontroladores como o Arduino também permitem criar instrumentos musicais e dispositivos interativos de baixo custo. Nosso projeto segue essa ideia: utilizamos componentes eletrônicos e programação para transformar comandos do jogador em sons, criando uma pequena versão de um jogo musical.
+            </p>
+        </section>
+
+        <section>
+            <h2>A história de Guitar Hero</h2>
+            <p>
+                Guitar Hero é uma série de jogos musicais que começou em 2005, desenvolvida originalmente pela Harmonix e publicada pela RedOctane e pela Activision.
+<br><br>
+O jogo ficou conhecido por utilizar uma guitarra de plástico com botões coloridos, permitindo que o jogador simulasse a execução de músicas. As notas apareciam na tela e o jogador precisava apertar os botões correspondentes no momento correto.
+<br><br>
+O sucesso do primeiro jogo deu origem a várias continuações e ajudou a popularizar os jogos musicais durante os anos 2000. A série também recebeu instrumentos para outros músicos, como bateria e microfone.
+<br><br>
+Nosso projeto foi inspirado nessa ideia, mas utiliza Arduino, botões, LEDs, potenciômetro e buzzer para criar uma versão simples e de baixo custo. Assim, podemos demonstrar como conceitos de eletrônica e programação podem ser usados para criar uma experiência musical interativa.
+            </p>
+        </section>
+
+        <section>
+            <h2>Como montar nosso Guitar Hero</h2>
+            <p>
+
+1. Monte os botões
+<br><br>
+Conecte os cinco botões ao Arduino.
+<br><br>
+Utilizamos a função "INPUT_PULLUP", portanto não são necessários resistores externos para os botões.
+<br><br>
+Os pinos utilizados são:
+<br><br>
+- Botão 1 → D2
+- Botão 2 → D3
+- Botão 3 → D4
+- Botão 4 → D5
+- Botão 5 → D6
+<br><br>
+Cada botão representa uma nota diferente.
+<br><br>
+2. Monte os LEDs
+<br><br>
+Cada botão possui um LED correspondente.
+<br><br>
+Conecte:
+<br><br>
+- LED 1 → D8
+- LED 2 → D9
+- LED 3 → D10
+- LED 4 → D11
+- LED 5 → D12
+<br><br>
+Utilize um resistor de 220 Ω em série com cada LED para limitar a corrente.
+<br><br>
+3. Conecte a chave deslizante
+<br><br>
+A chave deslizante será utilizada como a palhetada do instrumento.
+<br><br>
+Conecte um terminal da chave ao GND e o outro a uma entrada digital do Arduino, por exemplo, o pino D13. No programa, essa entrada pode utilizar "INPUT_PULLUP".
+<br><br>
+O Arduino verifica constantemente o estado da chave. Quando detecta uma mudança — de ligada para desligada ou de desligada para ligada — ele interpreta essa mudança como uma palhetada.
+<br><br>
+4. Conecte o buzzer
+<br><br>
+O buzzer passivo será responsável pela reprodução das notas.
+<br><br>
+- Positivo → D7
+- Negativo → GND
+<br><br>
+O Arduino utiliza diferentes frequências para produzir as notas.
+<br><br>
+5. Monte o controle
+<br><br>
+Depois de testar o circuito na protoboard, os componentes podem ser fixados em uma estrutura de papelão, EVA, MDF ou outro material.
+<br><br>
+Os cinco botões podem representar as notas da guitarra, enquanto a chave deslizante pode ficar em uma posição semelhante à palheta.
+<br><br>
+6. Programe o Arduino
+<br><br>
+O código determina:
+<br><br>
+- Qual nota cada botão representa;
+- Qual LED deve acender;
+- Quando uma palhetada acontece;
+- Qual frequência o buzzer deve produzir;
+- Qual é a próxima nota da música;
+- Se o jogador acertou ou errou.
+<br><br>
+7. Teste
+<br><br>
+Após carregar o programa no Arduino, pressione o botão indicado pelo LED e movimente a chave deslizante para realizar a palhetada.
+<br><br>
+A palhetada pode ser feita tanto ligando quanto desligando a chave. O Arduino detecta a mudança de estado e verifica qual botão está pressionado.
+<br><br>
+8. Pronto!
+<br><br>
+Agora o circuito funciona como um pequeno jogo musical inspirado no Guitar Hero, combinando eletrônica, programação e música em um único projeto.
+            </p>
+        </section>
+    </main>
+
+    
+<footer>
+    <img
+        src="imagens/logo-prof_adhemar_batista_Hermeritas_vila_formosa.png"
+        alt="Logo da escola"
+        class="logo-escola"
+    >
+</footer>
+
+
+</body>
+</html>

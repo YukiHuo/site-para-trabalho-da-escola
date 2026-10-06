@@ -1,0 +1,124 @@
+
+/* Aparência geral */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f2f2f2;
+    color: #333333;
+
+    padding-top: 160px;
+    padding-bottom: 100px;
+    box-sizing: border-box;
+}
+
+
+/* Cabeçalho */
+
+
+
+
+
+header {
+    background-color: #243247;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+header.reduzido {
+    padding: 8px 30px;
+}
+
+header h1 {
+    margin: 0 0 10px;
+    font-size: 32px;
+    transition: all 0.3s ease;
+}
+
+header.reduzido h1 {
+    font-size: 22px;
+    margin-bottom: 0;
+}
+
+header p {
+    margin: 0;
+    transition: all 0.3s ease;
+}
+
+header.reduzido p {
+    font-size: 12px;
+}
+
+
+
+
+
+
+/* Conteúdo principal */
+main {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+/* Seções de texto e imagem */
+section {
+    background-color: white;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Imagens */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 15px auto;
+    border-radius: 5px;
+}
+
+
+footer {
+    background-color: #243247;
+    color: white;
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+
+    min-height: 100px;
+    padding: 15px 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 1000;
+}
+
+
+.logo-escola {
+    position: absolute;
+    left: 25px;
+
+    width: 180px;
+    max-height: 80px;
+    object-fit: contain;
+    object-position: left center;
+}
+
+footer p {
+    margin: 0;
+    text-align: center;
+}
